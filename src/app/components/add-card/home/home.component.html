@@ -1,0 +1,71 @@
+<div class="mt-5 mb-5 text-right">
+
+    <a routerLink="/add-card" class='btn btn-success'>Add Payment</a>
+
+</div>
+<div class='row'>
+    <div class="mt-2 col-12 col-md-7">
+
+        <div style="margin-left: 10px;margin-right: 10px;">
+            <h1 class="font-weight-bold">The easiest way to manage your cards and payments</h1>
+        </div>
+        <br />
+        <br />
+        <div class="cards">
+
+            <app-card (click)='choosePayment(i,card)' [default]='defaultCardIndex == i' [payment]='card'
+                *ngFor="let card of cards$| async; index as i"></app-card>
+        </div>
+
+
+    </div>
+    <div class="mt-2 col-12 col-md-5">
+        <div  style="margin-left: 10px;margin-right: 10px;">
+
+            <div class='recent-transactions p-3 pt-5 pb-5 text-dark'>
+
+                <div *ngIf='(cards$ | async).length == 0' class="text-center pb-5">
+                    You Currently do not have any payments
+                </div>
+                <div *ngIf='!selectedCard &&  (cards$ | async).length != 0' class="text-center pb-5">
+                    Select A Card to view Details
+                </div>
+<div  *ngIf='selectedCard'>
+    <p class="">Payment Details</p>
+
+
+    <label class="font-weight-bold"> Credit Card Number:</label>
+    <br />
+    <span>{{selectedCard.number}}</span>
+    
+    <br />
+    <br />
+    <label class="font-weight-bold"> Card Holder:</label>
+    <br />
+    <span>{{selectedCard.name}}</span>
+    <br />
+    <br />
+    <label class="font-weight-bold"> Expiration date:</label>
+    <br />
+    <span>{{selectedCard.expDate}}</span>
+    <br />
+    <br />
+    <label class="font-weight-bold"> Cvv:</label>
+    <br />
+    <span>{{selectedCard.cvv}}</span>
+    <br />
+    <br />
+    <label class="font-weight-bold"> Amount:</label>
+    <br />
+    <span> {{selectedCard.amount | currency}}</span>
+
+</div>
+             
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

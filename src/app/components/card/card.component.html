@@ -1,0 +1,22 @@
+<div  class="card p-3 bg-success" style="position: relative;">
+
+    <span *ngIf='default' style="position:absolute;top: 10px;left:10px">
+        <i class="fa fa-check-circle  text-white"></i>
+    </span>
+    <span class="d-block text-right font-weight-bold">{{payment?.expDate}}</span>
+
+    
+    <br />
+    <h4 class='font-weight-bold'>{{payment?.number}}</h4> 
+    <br />
+    <br />
+    <div style='position: relative;'>
+    <p class='font-weight-bold'>{{payment?.name}}</p>
+    <p style="position: absolute;right:0;top:0;" class='font-weight-bold'>{{payment?.cvv}}</p>
+    </div>
+
+
+
+
+
+</div>
