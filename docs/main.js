@@ -263,13 +263,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const initialPaymentsState = {
-    payments: [{
-            number: "76763767776767",
-            name: "Sunmola Ayokunle",
-            expDate: '2020-01-01',
-            cvv: '567',
-            amount: 90888,
-        }],
+    payments: [],
     selectedPayment: 0
 };
 function PaymentReducer(state = initialPaymentsState, action) {
