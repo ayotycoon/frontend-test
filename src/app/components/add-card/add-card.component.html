@@ -29,19 +29,28 @@
                 <form [formGroup]="form">
 
                     <label class="font-weight-bold"> Credit Card Number:</label>
-                    <input class='form-control' max='16' maxlength='16' type="number" formControlName="number">
+                    <label  *ngIf="form.controls['number'].invalid && (form.controls['number'].dirty || form.controls['number'].touched)" class="text-danger"> Enter a valid number:</label>
+                    <input  class='form-control' max='16' maxlength='16' type="number" formControlName="number">
 
                     <br />
                     <label class="font-weight-bold"> Card Holder:</label>
+                    <label *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)"
+                        class="text-danger"> Enter a valid Name:</label>
                     <input class='form-control' type="text" formControlName="name">
                     <br />
                     <label class="font-weight-bold"> Expiration date:</label>
+                    <label *ngIf="form.controls['expDate'].invalid && (form.controls['expDate'].dirty || form.controls['expDate'].touched)"
+                        class="text-danger"> Enter a valid Expiration Date:</label>
                     <input class='form-control' type="date" formControlName="expDate">
                     <br />
                     <label class="font-weight-bold"> Cvv:</label>
+                    <label *ngIf="form.controls['cvv'].invalid && (form.controls['cvv'].dirty || form.controls['cvv'].touched)"
+                        class="text-danger"> Enter a valid security code:</label>
                     <input class='form-control' type="number" max='4' maxlength='4'  formControlName="cvv">
                     <br />
                     <label class="font-weight-bold"> Amount:</label>
+                    <label *ngIf="form.controls['amount'].invalid && (form.controls['amount'].dirty || form.controls['amount'].touched)"
+                        class="text-danger"> Enter a valid amount:</label>
                     <input class='form-control' type="number" formControlName="amount">
 
 
